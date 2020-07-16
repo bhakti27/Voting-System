@@ -16,3 +16,9 @@
 2. Election 
 3. Ballot - types
 4. Results -  contains election and votes
+
+
+## Project Set up
+`npm i -S redux react-redux`
+`npm install -S -E react-router-dom`
+
