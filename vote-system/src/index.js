@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { Layout } from './Components/Layout'
+import { Layout } from './Components/Layout';
+import {ElectionTable} from './Components/ElectionTable';
 
 ReactDOM.render(
   <Router>
@@ -26,6 +27,7 @@ ReactDOM.render(
             <h3>Register To vote </h3>
             <h3>Fill the Ballot</h3>
             <h3>Vote</h3>
+            <ElectionTable electionList={}></ElectionTable>
           </Route>
           <Route path="/color-tool">
             <Provider >

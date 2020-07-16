@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 
 
+export const electionReducer = (elections=[],actions)
+
 
 export const votingSystemReducer = combineReducers
 ({
