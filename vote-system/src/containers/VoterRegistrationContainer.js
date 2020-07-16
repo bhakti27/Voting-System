@@ -39,5 +39,6 @@ export const VoterRegistrationContainer = () => {
 
   return <>
     <VoterRegistration {...dispatchProps} {...stateProps} />
+    <LoadingModal isLoading={stateProps.isLoading} />
   </>;
 };
