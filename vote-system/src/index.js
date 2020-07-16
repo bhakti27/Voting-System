@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { Layout } from './Components/Layout'
+import { Layout } from './Components/Layout';
+import {votingSystemStore} from './stores/votingSystemStore';
+import {VotingSystemContainer} from './containers/VotingSystemContainer';
 
 ReactDOM.render(
   <Router>
@@ -14,9 +16,9 @@ ReactDOM.render(
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/color-tool">Elections</Link></li>
-          <li><Link to="/car-tool">Register To Vote</Link></li>
-          <li><Link to="/calc-tool">Vote</Link></li>
+          <li><Link to="/elections">Elections</Link></li>
+          <li><Link to="/voters">Register To Vote</Link></li>
+          <li><Link to="/vote">Vote</Link></li>
         </ul>
       </nav>
       <main id="content">
@@ -27,17 +29,17 @@ ReactDOM.render(
             <h3>Fill the Ballot</h3>
             <h3>Vote</h3>
           </Route>
-          <Route path="/color-tool">
-            <Provider >
-              Elections
+          <Route path="/elections">
+            <Provider store={votingSystemStore} >
+              <VotingSystemContainer/>
             </Provider>
           </Route>
-          <Route path="/car-tool">
+          <Route path="/voters">
             <Provider>
               Register Voters
             </Provider>
           </Route>
-          <Route path="/calc-tool">
+          <Route path="/vote">
             <Provider>
               Vote
             </Provider>
