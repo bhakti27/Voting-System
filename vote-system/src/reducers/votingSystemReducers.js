@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { REFRESH_ELECTIONS_LIST_REQUEST_ACTION } from "../actions/votingSystemActions";
+import { REFRESH_ELECTIONS_LIST_DONE_ACTION } from "../actions/votingSystemActions";
 
 
-export const electionReducer = (elections=[],actions) =>{
-    if(actions.type === REFRESH_ELECTIONS_LIST_REQUEST_ACTION)
-    return actions.elections;
+export const electionReducer = (elections=[], action) =>{
+    if(action.type === REFRESH_ELECTIONS_LIST_DONE_ACTION)
+    return action.elections;
 
 return elections;
 }
