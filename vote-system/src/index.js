@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { Layout } from './components/Layout';
+import { Layout } from './Components/Layout'
 
 ReactDOM.render(
   <Router>
