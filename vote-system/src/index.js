@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { voterRegistrationStore } from './stores/voterRegistrationStore';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
-import { Layout } from './Components/Layout';
+import { Layout } from './components/Layout';
 import {votingSystemStore} from './stores/votingSystemStore';
-import {VotingSystemContainer} from './containers/votingSystemContainer';
+import {VotingSystemContainer} from './containers/VotingSystemContainer';
 
 ReactDOM.render(
   <Router>

@@ -8,8 +8,8 @@ import {
   createCancelVoterAction, refreshVoters,
 } from '../actions/voterRegistrationActions';
 
-import { VoterRegistration } from '../Components/VoterRegistration';
-import { LoadingModal } from '../Components/LoadingModal';
+import { VoterRegistration } from '../components/VoterRegistration';
+import { LoadingModal } from '../components/LoadingModal';
 
 export const VoterRegistrationContainer = () => {
 
