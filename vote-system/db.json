@@ -1,0 +1,127 @@
+{
+    "voters": [
+        {
+            "id": 1,
+            "firstName": "Bhakti",
+            "lastName": "Shah",
+            "address": "123 Main",
+            "countyOrCity": "Santa Clara/Freemont",
+            "birthDate": "1/1/2000",
+            "email": "bhakti_shah@intuit.com",
+            "phone": "111-111-1111"
+        },
+        {
+            "id": 2,
+            "firstName": "Noel",
+            "lastName": "Eicher",
+            "address": "123 Main",
+            "countyOrCity": "San Diego/Poway",
+            "birthDate": "1/1/2000",
+            "email": "noel_eicher@intuit.com",
+            "phone": "222-222-2222"
+        },
+        {
+            "id": 3,
+            "firstName": "Chad",
+            "lastName": "Cloes",
+            "address": "123 Main",
+            "countyOrCity": "San Diego/Scripps Ranch",
+            "birthDate": "1/1/2000",
+            "email": "chad_cloes@intuit.com",
+            "phone": "333-333-3333"
+        }
+    ],
+    "elections": [
+        {
+            "id": 1,
+            "name": "Favorite pasttimes",
+            "questions": [
+                {
+                    "id": 1,
+                    "question": "Do you like to go for walks?"
+                },
+                {
+                    "id": 2,
+                    "question": "Do you like to swim?"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Favorite musical group",
+            "questions": [
+                {
+                    "id": 1,
+                    "question": "Do you like U2?"
+                },
+                {
+                    "id": 2,
+                    "question": "Do you like Radiohead?"
+                },
+                {
+                    "id": 3,
+                    "question": "Do you like Queen?"
+                }
+            ]
+        }
+    ],
+    "ballots": [
+        {
+            "voterId": 1,
+            "electionId": 1,
+            "responses": [
+                {
+                    "questionId": 1,
+                    "answer": 1
+                },
+                {
+                    "questionId": 2,
+                    "answer": 1
+                }
+             ]
+        },
+        {
+            "voterId": 1,
+            "electionId": 2,
+            "responses": [
+                1,
+                0,
+                1
+            ]
+        },
+        {
+            "voterId": 2,
+            "electionId": 1,
+            "responses": [
+                1,
+                0
+            ]
+        },
+        {
+            "voterId": 3,
+            "electionId": 1,
+            "responses": [
+                0,
+                1
+            ]
+        },
+        {
+            "voterId": 3,
+            "electionId": 2,
+            "responses": [
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "voterId": 2,
+            "electionId": 2,
+            "responses": [
+                1,
+                1,
+                1
+            ]
+        }
+    ]
+}
