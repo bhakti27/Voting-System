@@ -23,12 +23,14 @@
 
 .voters thead th, .voters tbody td {
   padding: 4px;
+  border: 1px solid black;
 }
 
 .voters thead th {
   text-align: center;
   font-weight: bold;
   border-bottom: 1px solid black;
+  background-color: grey;
 }
 
 .voters tbody td.number {
