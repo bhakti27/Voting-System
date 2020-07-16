@@ -5,7 +5,7 @@
             "firstName": "Bhakti",
             "lastName": "Shah",
             "address": "123 Main",
-            "countyOrCity": "Santa Clara/Freemont",
+            "countyAndCity": "Santa Clara/Freemont",
             "birthDate": "1/1/2000",
             "email": "bhakti_shah@intuit.com",
             "phone": "111-111-1111"
@@ -15,7 +15,7 @@
             "firstName": "Noel",
             "lastName": "Eicher",
             "address": "123 Main",
-            "countyOrCity": "San Diego/Poway",
+            "countyAndCity": "San Diego/Poway",
             "birthDate": "1/1/2000",
             "email": "noel_eicher@intuit.com",
             "phone": "222-222-2222"
@@ -25,7 +25,7 @@
             "firstName": "Chad",
             "lastName": "Cloes",
             "address": "123 Main",
-            "countyOrCity": "San Diego/Scripps Ranch",
+            "countyAndCity": "San Diego/Scripps Ranch",
             "birthDate": "1/1/2000",
             "email": "chad_cloes@intuit.com",
             "phone": "333-333-3333"
@@ -38,29 +38,29 @@
             "questions": [
                 {
                     "id": 1,
-                    "question": "Do you like to go for walks?"
+                    "question": "I like to go for walks"
                 },
                 {
                     "id": 2,
-                    "question": "Do you like to swim?"
+                    "question": "I like to swim"
                 }
             ]
         },
         {
             "id": 2,
-            "name": "Favorite musical group",
+            "name": "Favorite musical groups",
             "questions": [
                 {
                     "id": 1,
-                    "question": "Do you like U2?"
+                    "question": "I like U2"
                 },
                 {
                     "id": 2,
-                    "question": "Do you like Radiohead?"
+                    "question": "I like Radiohead"
                 },
                 {
                     "id": 3,
-                    "question": "Do you like Queen?"
+                    "question": "I like Queen"
                 }
             ]
         }
@@ -78,7 +78,7 @@
                     "questionId": 2,
                     "answer": 1
                 }
-             ]
+            ]
         },
         {
             "voterId": 1,
