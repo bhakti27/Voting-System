@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { voterRegistrationStore } from './stores/voterRegistrationStore';
+import { voterRegistrationStore } from './stores/VoterRegistrationStore';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
 import { Layout } from './components/Layout';
-import {votingSystemStore} from './stores/votingSystemStore';
+import {votingSystemStore} from './stores/VotingSystemStore';
 import {VotingSystemContainer} from './containers/VotingSystemContainer';
 
 ReactDOM.render(
   <Router>
     <Layout>
       <header id="page-header">
-        <h1>BNC Connectors - No Reason, not to vote!</h1>
+        <h1><img src="./images/BNC-Connector-Mascot.jpg"></img>BNC Connectors</h1>
+        <h8> - No Reason, not to vote!</h8>
       </header>
       <nav id="menu">
         <ul>

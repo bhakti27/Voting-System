@@ -1,8 +1,8 @@
-export const REFERSH_ELECTIONS_LIST_REQUEST_ACTION = "REFRESH_ELECTIONS_LIST_REQUEST";
+export const REFRESH_ELECTIONS_LIST_REQUEST_ACTION = "REFRESH_ELECTIONS_LIST_REQUEST";
 
 
 export const creteRefreshElectionsListRequestAction = () => ({
-    type: REFERSH_ELECTIONS_LIST_REQUEST_ACTION,
+    type: REFRESH_ELECTIONS_LIST_REQUEST_ACTION,
 });
 
 export const refreshElectionsList = () => {
