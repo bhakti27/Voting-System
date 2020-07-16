@@ -29,7 +29,7 @@ export const VoterTable = ({
       </thead>
       <tbody>
         {!voters.length
-          ? <tr><td colSpan="6">There are no voters.</td></tr>
+          ? <tr><td colSpan="9">There are no voters.</td></tr>
           : voters.map(voter => voter.id === editVoterId
               ? <VoterEditRow key={voter.id} voter={voter}
                   onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />

@@ -5,6 +5,7 @@ import { VoterTable } from './VoterTable';
 import { VoterForm } from './VoterForm';
 
 import "./ToolHeader.css";
+import "./VoterRegistration.css";
 
 export const VoterRegistration = ({
   voters, editVoterId,
