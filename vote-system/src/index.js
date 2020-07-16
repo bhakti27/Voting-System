@@ -14,31 +14,34 @@ ReactDOM.render(
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          {/* <li><Link to="/color-tool">Color Tool</Link></li>
-          <li><Link to="/car-tool">Car Tool</Link></li>
-          <li><Link to="/calc-tool">Calc Tool</Link></li> */}
+          <li><Link to="/color-tool">Elections</Link></li>
+          <li><Link to="/car-tool">Register To Vote</Link></li>
+          <li><Link to="/calc-tool">Vote</Link></li>
         </ul>
       </nav>
       <main id="content">
         <Switch>
           <Route path="/" exact>
-            <div>Home</div>
+            <div>Ready to Vote, Follow three simple steps</div>
+            <h3>Register To vote </h3>
+            <h3>Fill the Ballot</h3>
+            <h3>Vote</h3>
           </Route>
-          {/* <Route path="/color-tool">
-            <Provider store={colorToolStore}>
-              <ColorToolContainer />
+          <Route path="/color-tool">
+            <Provider >
+              Elections
             </Provider>
           </Route>
           <Route path="/car-tool">
-            <Provider store={carToolStore}>
-              <CarToolContainer />
+            <Provider>
+              Register Voters
             </Provider>
           </Route>
           <Route path="/calc-tool">
-            <Provider store={calcToolStore}>
-              <CalcToolContainer />
+            <Provider>
+              Vote
             </Provider>
-          </Route> */}
+          </Route>
         </Switch>
       </main>
       <footer id="page-footer">
