@@ -1,15 +1,16 @@
-export const REFERSH_ELECTIONLIST_REQUEST_ACTION = "REQUEST_ELECTION_LIST_REQUEST";
+export const REFERSH_ELECTIONS_LIST_REQUEST_ACTION = "REFRESH_ELECTIONS_LIST_REQUEST";
 
 
-export const creteRefreshElectionListAction = () => ({
-    type: REFERSH_ELECTIONLIST_REQUEST_ACTION,
+export const creteRefreshElectionsListRequestAction = () => ({
+    type: REFERSH_ELECTIONS_LIST_REQUEST_ACTION,
 });
 
-export const refreshElectionList = () => {
+export const refreshElectionsList = () => {
     return dispatch => {
-        dispatch(creteRefreshElectionListAction());
+        dispatch(creteRefreshElectionsListRequestAction());
         return fetch('http://localhost:3060/elections')
-        .then(res => res.json());
+        .then(res => { res.json()});
+        //TODO : utitlize Done action here to return elections object
     }
 }
 
