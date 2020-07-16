@@ -1,121 +1,151 @@
 {
-    "voters": [
+  "voters": [
+    {
+      "id": 1,
+      "firstName": "Bhakti",
+      "lastName": "Shah",
+      "address": "123 Main",
+      "city": "Santa Clara/Freemont",
+      "birthDate": "1/1/2000",
+      "email": "bhakti_shah@intuit.com",
+      "phone": "111-111-1111"
+    },
+    {
+      "id": 2,
+      "firstName": "Noel",
+      "lastName": "Eicher",
+      "address": "123 Main",
+      "city": "San Diego/Poway",
+      "birthDate": "1/1/2000",
+      "email": "noel_eicher@intuit.com",
+      "phone": "222-222-2222"
+    },
+    {
+      "id": 3,
+      "firstName": "Chad",
+      "lastName": "Cloes",
+      "address": "123 Main",
+      "city": "San Diego/Scripps Ranch",
+      "birthDate": "1/1/2000",
+      "email": "chad_cloes@intuit.com",
+      "phone": "333-333-3333"
+    },
+    {
+      "firstName": "ca",
+      "lastName": "ca",
+      "address": "ca",
+      "city": "ca",
+      "birthDate": "ca",
+      "email": "ca",
+      "phone": "ca",
+      "id": 4
+    },
+    {
+      "firstName": "dg",
+      "lastName": "dg",
+      "address": "dg",
+      "city": "dg",
+      "birthDate": "dg",
+      "email": "dg",
+      "phone": "dg",
+      "id": 5
+    },
+    {
+      "firstName": "sdf",
+      "lastName": "sdf",
+      "address": "sdf",
+      "city": "sdf",
+      "birthDate": "sdf",
+      "email": "sdf",
+      "phone": "sdf",
+      "id": 6
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "name": "Favorite pasttimes",
+      "questions": [
         {
-            "id": 1,
-            "firstName": "Bhakti",
-            "lastName": "Shah",
-            "address": "123 Main",
-            "city": "Santa Clara/Freemont",
-            "birthDate": "1/1/2000",
-            "email": "bhakti_shah@intuit.com",
-            "phone": "111-111-1111"
+          "id": 1,
+          "question": "I like to go for walks"
         },
         {
-            "id": 2,
-            "firstName": "Noel",
-            "lastName": "Eicher",
-            "address": "123 Main",
-            "city": "San Diego/Poway",
-            "birthDate": "1/1/2000",
-            "email": "noel_eicher@intuit.com",
-            "phone": "222-222-2222"
-        },
-        {
-            "id": 3,
-            "firstName": "Chad",
-            "lastName": "Cloes",
-            "address": "123 Main",
-            "city": "San Diego/Scripps Ranch",
-            "birthDate": "1/1/2000",
-            "email": "chad_cloes@intuit.com",
-            "phone": "333-333-3333"
+          "id": 2,
+          "question": "I like to swim"
         }
-    ],
-    "elections": [
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Favorite musical groups",
+      "questions": [
         {
-            "id": 1,
-            "name": "Favorite pasttimes",
-            "questions": [
-                {
-                    "id": 1,
-                    "question": "I like to go for walks"
-                },
-                {
-                    "id": 2,
-                    "question": "I like to swim"
-                }
-            ]
+          "id": 1,
+          "question": "I like U2"
         },
         {
-            "id": 2,
-            "name": "Favorite musical groups",
-            "questions": [
-                {
-                    "id": 1,
-                    "question": "I like U2"
-                },
-                {
-                    "id": 2,
-                    "question": "I like Radiohead"
-                },
-                {
-                    "id": 3,
-                    "question": "I like Queen"
-                }
-            ]
+          "id": 2,
+          "question": "I like Radiohead"
+        },
+        {
+          "id": 3,
+          "question": "I like Queen"
         }
-    ],
-    "ballots": [
-        {
-            "voterId": 1,
-            "electionId": 1,
-            "responses": [
-                1,
-                1
-            ]
-        },
-        {
-            "voterId": 1,
-            "electionId": 2,
-            "responses": [
-                1,
-                0,
-                1
-            ]
-        },
-        {
-            "voterId": 2,
-            "electionId": 1,
-            "responses": [
-                1,
-                0
-            ]
-        },
-        {
-            "voterId": 3,
-            "electionId": 1,
-            "responses": [
-                0,
-                1
-            ]
-        },
-        {
-            "voterId": 3,
-            "electionId": 2,
-            "responses": [
-                0,
-                1,
-                1
-            ]
-        },
-        {
-            "voterId": 2,
-            "electionId": 2,
-            "responses": [
-                1,
-                1,
-                1
-            ]
-        }
-    ]
+      ]
+    }
+  ],
+  "ballots": [
+    {
+      "voterId": 1,
+      "electionId": 1,
+      "responses": [
+        1,
+        1
+      ]
+    },
+    {
+      "voterId": 1,
+      "electionId": 2,
+      "responses": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "voterId": 2,
+      "electionId": 1,
+      "responses": [
+        1,
+        0
+      ]
+    },
+    {
+      "voterId": 3,
+      "electionId": 1,
+      "responses": [
+        0,
+        1
+      ]
+    },
+    {
+      "voterId": 3,
+      "electionId": 2,
+      "responses": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "voterId": 2,
+      "electionId": 2,
+      "responses": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
 }

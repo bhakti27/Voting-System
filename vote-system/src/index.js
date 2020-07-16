@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import { voterRegistrationStore } from './stores/voterRegistrationStore';
+import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
 import { Layout } from './Components/Layout';
 import {votingSystemStore} from './stores/votingSystemStore';
-import {VotingSystemContainer} from './containers/VotingSystemContainer';
+import {VotingSystemContainer} from './containers/votingSystemContainer';
 
 ReactDOM.render(
   <Router>
@@ -35,8 +37,8 @@ ReactDOM.render(
             </Provider>
           </Route>
           <Route path="/voters">
-            <Provider>
-              Register Voters
+            <Provider store={voterRegistrationStore}>
+              <VoterRegistrationContainer />
             </Provider>
           </Route>
           <Route path="/vote">

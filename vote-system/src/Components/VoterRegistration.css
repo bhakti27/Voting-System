@@ -1,0 +1,60 @@
+
+.voters header {
+  margin-top: 50px;
+}
+
+.voters table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.voters form {
+  margin-top: 20px;
+}
+
+.voters form div {
+  margin: 8px;
+}
+
+.voters form label {
+  display: inline-block;
+  width: 50px;
+}
+
+.voters thead th, .voters tbody td {
+  padding: 4px;
+}
+
+.voters thead th {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.voters tbody td.number {
+  text-align: right;
+}
+
+.voters tbody td.text {
+  text-align: left;
+}
+
+.voters tbody td {
+  text-align: center;
+}
+
+.voters tbody > tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+.voters tbody > tr:hover {
+  background-color: lightyellow;
+}
+
+.voters form input {
+  width: 100px;
+  border: 1px solid slategray;
+  border-radius: 5px;
+  padding: 4px;
+  outline: none;
+}
