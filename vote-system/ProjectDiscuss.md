@@ -1,9 +1,9 @@
 # PROJECT BREAKDOWN 
 
 ## Assignments
-Workflow1 - Chad
-Workflow2 - Bhakti
-Workflow3 - Noel
+- Workflow1 - Chad
+- Workflow2 - Bhakti
+- Workflow3 - Noel
 
 ## Components 
 1. Form
