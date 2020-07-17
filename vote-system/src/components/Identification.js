@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import "./Identification.css";
-export const Identification = ({ elections, chageVisiblityOfBallot,
-    resetShowBallot, changeVisibilityOfError, resetshowError }) => {
+export const Identification = ({ voters, chageVisiblityOfBallot,
+    changeVisibilityOfError,isBallotVisible}) => {
 
-    const [identificationId, setIdentificationId] = useState(undefined);
-
+    const [identificationId, setIdentificationId] = useState('');
 
     const verifyAction = () => {
-        resetShowBallot();
-        resetshowError();
-        setIdentificationId(undefined);
-        elections.forEach(election => {
-            if (election.emailId === identificationId) {
-                chageVisiblityOfBallot();
+        setIdentificationId('');
+        voters.forEach(voter => {
+            
+            if (voter.email === identificationId) {
+                console.log(voter.email);
+                chageVisiblityOfBallot(true);
                 return;
             }
         })
+        if(!isBallotVisible)
+        {
+            console.log("return");
+            console.log(isBallotVisible);
+            changeVisibilityOfError(true);
+        }
 
-        changeVisibilityOfError();
     }
     const updateInputValue = (e) => {
         setIdentificationId(e.target.value);

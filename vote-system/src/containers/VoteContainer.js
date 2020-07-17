@@ -5,24 +5,38 @@ import { useSelector, useDispatch } from 'react-redux';
 import {BallotForm} from '../components/BallotForm';
 import { refreshVoters} from '../actions/voterRegistrationActions';
 import { bindActionCreators } from 'redux';
-import {useShowBallot} from '../hooks/useBallot';
-import {useError} from '../hooks/useError';
 import {Error} from '../components/Error';
+import {createToggleAction,createToggleErroAction} from '../actions/voteActions'
 
 export const VoteContainer = () => {
 
+  //tODO : remove elections object from here
+  const electionObj = [
+    {
+      "id": 1,
+      "name": "Favorite pasttimes",
+      "questions": [
+        {
+          "id": 1,
+          "question": "I like to go for walks"
+        },
+        {
+          "id": 2,
+          "question": "I like to swim"
+        }
+      ]
+    }];
 
     const stateProps = useSelector(state => state);
     const dispatch = useDispatch();
     const dispatchProps = useMemo(() => bindActionCreators({
         onRefreshVoters: refreshVoters,
-        // onValidation: showBallot,
+        isBallotVisible:createToggleAction,
+        isErrorVisible:createToggleErroAction
     }, dispatch), [ dispatch ]);
-   const  [ showBallot, changeShowBallot, resetShowBallot ] = useShowBallot(false);
-   const [ showError, changeShowError, resetshowError] = useError(false);
-
    
    const electionId =1; 
+   console.log(stateProps.isErrorVisible);
    useEffect(() => {
 
         dispatchProps.onRefreshVoters();
@@ -31,17 +45,14 @@ export const VoteContainer = () => {
 
     return (
     <>
-    <Identification elections={stateProps.elections}
-    chageVisiblityOfBallot ={changeShowBallot}
-    resetShowBallot={resetShowBallot} 
-    changeVisibilityOfError={changeShowError}
-    resetshowError={resetshowError}
+    <Identification voters={stateProps.voters}
+    chageVisiblityOfBallot ={dispatchProps.isBallotVisible}
+    changeVisibilityOfError={dispatchProps.isErrorVisible}
+    isBallotVisible={stateProps.isBallotVisible}
     />
     <BallotForm electionId={electionId} 
     elections={stateProps.elections} 
-    showBallot={showBallot}
-    />
-    <Error showError={showError}
-    changeShowError={changeShowError}/>
+    showBallot={stateProps.isBallotVisible} />
+    <Error showError={stateProps.isErrorVisible}/>
     </>)
 }
