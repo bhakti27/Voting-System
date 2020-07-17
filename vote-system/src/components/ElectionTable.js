@@ -2,7 +2,7 @@ import React from 'react';
 
 import { electionsPropTypes } from '../propTypes/elections';
 import { ElectionViewRow } from './ElectionViewRow';
-
+import "./QuestionTool.css";
 export const ElectionTable = ({ elections }) => {
 
 
@@ -11,7 +11,8 @@ export const ElectionTable = ({ elections }) => {
   };
 
   return (
-    <table>
+    
+    <table className="question-tool-table">
       <thead>
         <tr>
           <th>Id</th>

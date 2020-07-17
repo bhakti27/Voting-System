@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useForm } from '../hooks/useForm';
-
+import "./QuestionTool.css";
 export const QuestionForm = ({ buttonText, onSubmitQuestion }) => {
 
   const [ questionForm, change, resetQuestionForm ] = useForm({
@@ -16,7 +16,7 @@ export const QuestionForm = ({ buttonText, onSubmitQuestion }) => {
   };
 
   return (
-    <form>
+    <form className="tool-form">
       <div>
         <label htmlFor="name-input">Question for a new election</label>
         <input type="text" id="name-input" name="name"
@@ -27,7 +27,7 @@ export const QuestionForm = ({ buttonText, onSubmitQuestion }) => {
         <input type="text" id="hexcode-input" name="hexcode"
           value={questionForm.hexcode} onChange={change} />
       </div> */}
-      <button type="button" onClick={submitQuestion}>{buttonText}</button>
+      <button className="button-style" type="button" onClick={submitQuestion}>{buttonText}</button>
     </form>
   );
 
