@@ -23,6 +23,8 @@ export const VoterViewRow = ({
           onClick={() => onEditVoter(voter.id)}>Edit</button>
         <button type="button"
           onClick={() => onDeleteVoter(voter.id)}>Delete</button>
+        <button type="button"
+          onClick={() => console.log("TestDelete")}>Test Delete</button>
       </td>
     </tr>
   );

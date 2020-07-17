@@ -3,21 +3,40 @@ import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { refreshElectionsList } from '../actions/votingSystemActions';
-import {Identification} from '../components/Indetification';
+import { VoterRegistration } from '../components/VoterRegistration';
+import { LoadingModal } from '../components/LoadingModal';
+import { 
+    refreshVoters, 
+    addVoter, deleteVoter, saveVoter,
+    createEditVoterAction, 
+    createCancelVoterAction, 
+} from '../actions/voterRegistrationActions';
 
 export const VotingSystemContainer = () => {
 
 
     const stateProps = useSelector(state => state);
-    const dispatch = useDispatch();
-    // const dispatchProps = useMemo(() => bindActionCreators({
-    //     onRefreshElections: refreshElectionsList,
-    // }, dispatch), [dispatch]);
 
-    // useEffect(() => {
-    //     dispatchProps.onRefreshElections();
-    // }, [dispatchProps]);
-console.log("printing elections");
-console.log(stateProps);
-    return <Identification {...stateProps }/>
-}
+    const dispatch = useDispatch();
+
+    const dispatchProps = useMemo(() => bindActionCreators({
+        onRefreshVoters: refreshVoters,
+        onAddVoter: addVoter,
+        onSaveVoter: saveVoter,
+        onDeleteVoter: deleteVoter,
+        onEditVoter: createEditVoterAction,
+        onCancelVoter: createCancelVoterAction,
+        onRefreshElections: refreshElectionsList,
+    }, dispatch), [dispatch]);
+
+    useEffect(() => {
+
+        dispatchProps.onRefreshVoters();
+    
+    }, [ dispatchProps ]);
+
+    return <>
+    <VoterRegistration {...dispatchProps} {...stateProps} />
+    <LoadingModal isLoading={stateProps.isLoading} />
+    </>;
+};

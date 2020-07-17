@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const voterPropTypes = PropTypes.shape({
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,

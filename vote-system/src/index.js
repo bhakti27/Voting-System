@@ -12,7 +12,7 @@ ReactDOM.render(
     <Layout>
       <header id="page-header">
         <h1><img src="./images/BNC-Connector-Mascot.jpg" alt=""></img>BNC Connectors</h1>
-        <h8> - No Reason, not to vote!</h8>
+        <h3> - No Reason, not to vote!</h3>
       </header>
       <nav id="menu">
         <ul>
