@@ -4,21 +4,18 @@ import { ToolHeader } from './ToolHeader';
 import { ElectionTable } from './ElectionTable';
 import { ElectionForm } from './ElectionForm';
 
-import "./ElectionTool.css";
+import "./ToolHeader.css";
 
 export const ElectionTool = ({
-  elections, //tempElection, tempQuestions
-//  onCreateElection: createElection
+  elections, 
+  onAddElection: addElection,
 }) => {
 
   return (
-    <div className="election-tool">
-      {/* <ToolHeader headerText="Election Tool" /> */}
+    <div className="elections">
+      <ToolHeader headerText="Elections" />
       <ElectionTable elections={elections} />
-      {/* <ItemList items={questions}
-        contentFn={question => question.name}
-        actionButtonText="X" onAction={deleteQuestion} />
-      <ElectionForm buttonText="Create Election" onCreateElection={createElection} /> */}
+      <ElectionForm onSubmitElection={addElection} />
     </div>
   );
 

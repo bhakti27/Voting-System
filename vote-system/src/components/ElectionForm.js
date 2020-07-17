@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  StringFormControl,
-} from './FormControls';
+import { StringFormControl } from './FormControls';
 import { useForm } from '../hooks/useForm';
 
-export const ElectionForm = ({ onSubmitElection }) => {
+export const ElectionForm = ({ onAddQuestion, onSubmitElection }) => {
 
-  const [ electionForm, change, resetElectionForm ] = useForm({
-    name: '',
+  const [electionForm, change, resetElectionForm] = useForm({
+    electionName: '',
+    questionText: '',
     questions: [],
   });
 
@@ -20,22 +19,64 @@ export const ElectionForm = ({ onSubmitElection }) => {
 
   return (
     <form>
-      <StringFormControl caption="Election Name" name="name"
-        value={electionForm.name} onChange={change} />
-      {/* <StringFormControl caption="Question" name="question"
-        value={questionForm.question} onChange={changeQuestion} />
-      <button type="button" onClick={submitQuestion}>Add Question</button> */}
-      <button type="button" onClick={submitElection}>Submit Election</button>
+      <StringFormControl caption="Question for a new Election" name="question"
+        value={electionForm.questionText} onChange={change} />
+      <button type="button" onClick={onAddQuestion}>Add Question</button>
+      <StringFormControl caption="Election Name" name="electionName"
+        value={electionForm.electionName} onChange={change} />
+      <button type="button" onClick={submitElection}>Create Election</button>
     </form>
   )
 
 };
 
-// CarForm.defaultProps = {
-//   buttonText: 'Submit Car',
-// };
+ElectionForm.defaultProps = {
+  buttonText: '',
+};
 
 ElectionForm.propTypes = {
   buttonText: PropTypes.string,
-  onSubmitElectionList: PropTypes.func.isRequired,
+  onSubmitElection: PropTypes.func.isRequired,
 };
+
+// import React from 'react';
+// import PropTypes from 'prop-types';
+
+// import {
+//   StringFormControl,
+// } from './FormControls';
+// import { useForm } from '../hooks/useForm';
+
+// export const ElectionForm = ({ onSubmitElection }) => {
+
+//   const [ electionForm, change, resetElectionForm ] = useForm({
+//     name: '',
+//     questions: [],
+//   });
+
+//   const submitElection = () => {
+//     onSubmitElection(electionForm);
+//     resetElectionForm();
+//   };
+
+//   return (
+//     <form>
+//       <StringFormControl caption="Election Name" name="name"
+//         value={electionForm.name} onChange={change} />
+//       {/* <StringFormControl caption="Question" name="question"
+//         value={questionForm.question} onChange={changeQuestion} />
+//       <button type="button" onClick={submitQuestion}>Add Question</button> */}
+//       <button type="button" onClick={submitElection}>Submit Election</button>
+//     </form>
+//   )
+
+// };
+
+// // CarForm.defaultProps = {
+// //   buttonText: 'Submit Car',
+// // };
+
+// ElectionForm.propTypes = {
+//   buttonText: PropTypes.string,
+//   onSubmitElectionList: PropTypes.func.isRequired,
+// };
