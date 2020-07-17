@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-import { voterRegistrationStore } from './stores/VoterRegistrationStore';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
 import { Layout } from './components/Layout';
 import {votingSystemStore} from './stores/VotingSystemStore';
@@ -14,7 +12,7 @@ ReactDOM.render(
     <Layout>
       <header id="page-header">
         <h1><img src="./images/BNC-Connector-Mascot.jpg" alt=""></img>BNC Connectors</h1>
-        <h8> - No Reason, not to vote!</h8>
+        <h3> - No Reason, not to vote!</h3>
       </header>
       <nav id="menu">
         <ul>
@@ -39,7 +37,7 @@ ReactDOM.render(
             </Provider>
           </Route>
           <Route path="/voters">
-            <Provider store={voterRegistrationStore}>
+            <Provider store={votingSystemStore}>
               <VoterRegistrationContainer />
             </Provider>
           </Route>

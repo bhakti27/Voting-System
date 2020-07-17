@@ -3,13 +3,15 @@ import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
-  addVoter, createSaveVoterAction,
-  createDeleteVoterAction, createEditVoterAction,
-  createCancelVoterAction, refreshVoters,
+  refreshVoters,
+  addVoter, saveVoter, deleteVoter,
+  createEditVoterAction,
+  createCancelVoterAction,
 } from '../actions/voterRegistrationActions';
 
 import { VoterRegistration } from '../components/VoterRegistration';
 import { LoadingModal } from '../components/LoadingModal';
+
 
 export const VoterRegistrationContainer = () => {
 
@@ -20,8 +22,8 @@ export const VoterRegistrationContainer = () => {
   const dispatchProps = useMemo(() => bindActionCreators({
     onRefreshVoters: refreshVoters,
     onAddVoter: addVoter,
-    onSaveVoter: createSaveVoterAction,
-    onDeleteVoter: createDeleteVoterAction,
+    onSaveVoter: saveVoter,
+    onDeleteVoter: deleteVoter,
     onEditVoter: createEditVoterAction,
     onCancelVoter: createCancelVoterAction,
   }, dispatch), [ dispatch ]);
@@ -31,11 +33,6 @@ export const VoterRegistrationContainer = () => {
     dispatchProps.onRefreshVoters();
 
   }, [ dispatchProps ]);
-
-
-  // return <>
-  //   <VoterRegistration {...dispatchProps} {...stateProps} />
-  //   <LoadingModal isLoading={stateProps.isLoading} />
 
   return <>
     <VoterRegistration {...dispatchProps} {...stateProps} />
