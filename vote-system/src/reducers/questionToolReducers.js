@@ -11,20 +11,6 @@ export const questionsReducer = (questions = [], action) => {
   return questions;
 };
 
-export const isLoadingReducer = (isLoading = false, action) => {
-
-  if (action.type.endsWith('_REQUEST')) {
-    return true;
-  }
-
-  if (action.type.endsWith('_DONE')) {
-    return false;
-  }
-
-  return isLoading;
-};
-
 export const questionToolReducer = combineReducers({
-  isLoading: isLoadingReducer,
   questions: questionsReducer,
 });
