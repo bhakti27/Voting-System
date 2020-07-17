@@ -1,0 +1,20 @@
+.identification
+{
+    margin: 30px 30px 30px 30px;
+    
+}
+
+.identification > input{
+    width: 350px;
+    height: 30px;
+    border: 1px solid;
+    margin-right: 30px;
+    padding-left: 10px;
+}
+
+.identification > button{
+    width: 100px;
+    height: 30px;
+    border: 1px solid;
+    background-color: cornflowerblue;
+}

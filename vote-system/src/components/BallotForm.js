@@ -1,10 +1,23 @@
 import React from 'react';
 import "./BallotForm.css";
 
-export const BallotForm = () => {
+export const BallotForm = ({electionId,elections,showBallot}) => {
     return (
-        <div className="ballot">
-        <h1>I am ballot</h1>
-        </div>
-    )
-}
+            <div style={{visibility: showBallot ? "visible" :"hidden"}}>
+                {elections.map(election=>{
+                    if(election.id===electionId)
+                    {
+                            election.question.map(q=>{
+                                return(
+                                    <div key={electionId + q.id}>
+                                    <label>{q.question}</label>
+                                    <input type="checkbox"/>
+                                    </div>
+                                )
+                            
+                            }) 
+                    }})}
+                    </div>
+                     )
+                }
+

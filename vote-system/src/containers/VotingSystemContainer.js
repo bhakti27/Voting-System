@@ -1,10 +1,11 @@
 import React, { useMemo, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
-import {Identification} from '../components/Indetification';
+import {Identification} from '../components/Identification';
 
 export const VotingSystemContainer = () => {
 
+    
 
     const stateProps = useSelector(state => state);
     const dispatch = useDispatch();
