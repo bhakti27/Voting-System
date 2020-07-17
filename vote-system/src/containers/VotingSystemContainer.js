@@ -35,7 +35,6 @@ import {
 } from '../actions/questionActions';
 import { QuestionTool } from '../components/QuestionTool';
 import { ElectionTool } from '../components/ElectionTool';
-import { LoadingModal } from '../components/LoadingModal';
 import { VoterRegistration } from '../components/VoterRegistration';
 import { LoadingModal } from '../components/LoadingModal';
 import { 
@@ -52,41 +51,32 @@ export const VotingSystemContainer = () => {
 
   const dispatch = useDispatch();
 
+
   const dispatchProps = useMemo(() => bindActionCreators({
     onRefreshElectionsList: refreshElectionsList,
- //   onAddElection: addElection,
     onRefreshQuestions: refreshQuestions,
     onAddQuestion: addQuestion,
     onDeleteQuestion: deleteQuestion,
-}, dispatch), [ dispatch ]);
-
-  
-    const stateProps = useSelector(state => state);
-
-    const dispatch = useDispatch();
-
-    const dispatchProps = useMemo(() => bindActionCreators({
-        onRefreshVoters: refreshVoters,
-        onAddVoter: addVoter,
-        onSaveVoter: saveVoter,
-        onDeleteVoter: deleteVoter,
-        onEditVoter: createEditVoterAction,
-        onCancelVoter: createCancelVoterAction,
-        onRefreshElections: refreshElectionsList,
-    }, dispatch), [dispatch]);
+    onRefreshVoters: refreshVoters,
+    onAddVoter: addVoter,
+    onSaveVoter: saveVoter,
+    onDeleteVoter: deleteVoter,
+    onEditVoter: createEditVoterAction,
+    onCancelVoter: createCancelVoterAction,
+    onRefreshElections: refreshElectionsList,
+  }, dispatch), [dispatch]);
 
     useEffect(() => {
       
-        dispatchProps.onRefreshElectionsList();
-        dispatchProps.onRefreshQuestions();
-        dispatchProps.onRefreshVoters();
+     dispatchProps.onRefreshElectionsList();
+     dispatchProps.onRefreshQuestions();
+     dispatchProps.onRefreshVoters();
     
     }, [ dispatchProps ]);
 
     return <>
-     <ElectionTool {...dispatchProps} {...stateProps} />
+    <ElectionTool {...dispatchProps} {...stateProps} />
     <QuestionTool {...dispatchProps} {...stateProps} />
-    <LoadingModal isLoading={stateProps.isLoading} />
     <VoterRegistration {...dispatchProps} {...stateProps} />
     <LoadingModal isLoading={stateProps.isLoading} />
     </>;

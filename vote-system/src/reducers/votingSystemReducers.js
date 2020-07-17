@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import {
   EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION, REFRESH_VOTERS_DONE_ACTION,
 } from '../actions/voterRegistrationActions';
-import { isLoadingReducer, questionsReducer } from "./questionToolReducers";
+import { questionsReducer } from "./questionToolReducers";
 import { REFRESH_ELECTIONS_LIST_DONE_ACTION, REFRESH_ELECTIONS_LIST_REQUEST_ACTION } from "../actions/votingSystemActions";
 
 export const electionReducer = (elections = [], action) => {
