@@ -26,17 +26,25 @@ import React, { useMemo, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
+
 import {
   refreshElectionsList,
 } from '../actions/votingSystemActions';
-
 import {
   refreshQuestions, addQuestion, deleteQuestion,
 } from '../actions/questionActions';
-
 import { QuestionTool } from '../components/QuestionTool';
 import { ElectionTool } from '../components/ElectionTool';
 import { LoadingModal } from '../components/LoadingModal';
+import { VoterRegistration } from '../components/VoterRegistration';
+import { LoadingModal } from '../components/LoadingModal';
+import { 
+    refreshVoters, 
+    addVoter, deleteVoter, saveVoter,
+    createEditVoterAction, 
+    createCancelVoterAction, 
+} from '../actions/voterRegistrationActions';
+
 
 export const VotingSystemContainer = () => {
 
@@ -52,17 +60,35 @@ export const VotingSystemContainer = () => {
     onDeleteQuestion: deleteQuestion,
 }, dispatch), [ dispatch ]);
 
-  useEffect(() => {
+  
+    const stateProps = useSelector(state => state);
 
-    dispatchProps.onRefreshElectionsList();
-    dispatchProps.onRefreshQuestions();
+    const dispatch = useDispatch();
 
-  }, [ dispatchProps ]);
+    const dispatchProps = useMemo(() => bindActionCreators({
+        onRefreshVoters: refreshVoters,
+        onAddVoter: addVoter,
+        onSaveVoter: saveVoter,
+        onDeleteVoter: deleteVoter,
+        onEditVoter: createEditVoterAction,
+        onCancelVoter: createCancelVoterAction,
+        onRefreshElections: refreshElectionsList,
+    }, dispatch), [dispatch]);
 
+    useEffect(() => {
+      
+        dispatchProps.onRefreshElectionsList();
+        dispatchProps.onRefreshQuestions();
+        dispatchProps.onRefreshVoters();
+    
+    }, [ dispatchProps ]);
 
-  return <>
-    <ElectionTool {...dispatchProps} {...stateProps} />
+    return <>
+     <ElectionTool {...dispatchProps} {...stateProps} />
     <QuestionTool {...dispatchProps} {...stateProps} />
     <LoadingModal isLoading={stateProps.isLoading} />
-  </>;
+    <VoterRegistration {...dispatchProps} {...stateProps} />
+    <LoadingModal isLoading={stateProps.isLoading} />
+    </>;
+
 };
