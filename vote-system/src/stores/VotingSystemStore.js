@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 
 import { votingSystemReducer } from '../reducers/votingSystemReducers';
 
-export const votingSystemStore = createStore(votingSystemReducer,
+export const votingSystemStore = createStore(
+  votingSystemReducer,
   composeWithDevTools(applyMiddleware(thunk)),
 );

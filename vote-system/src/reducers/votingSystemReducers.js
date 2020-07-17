@@ -1,17 +1,15 @@
 import { combineReducers } from "redux";
-
 import {
   EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION, REFRESH_VOTERS_DONE_ACTION,
 } from '../actions/voterRegistrationActions';
+import { isLoadingReducer, questionsReducer } from "./questionToolReducers";
+import { REFRESH_ELECTIONS_LIST_DONE_ACTION, REFRESH_ELECTIONS_LIST_REQUEST_ACTION } from "../actions/votingSystemActions";
 
-import { REFRESH_ELECTIONS_LIST_REQUEST_ACTION } from "../actions/votingSystemActions";
+export const electionReducer = (elections = [], action) => {
+    if (action.type === REFRESH_ELECTIONS_LIST_DONE_ACTION)
+        return action.elections;
 
-
-export const electionReducer = (elections=[],actions) =>{
-    if(actions.type === REFRESH_ELECTIONS_LIST_REQUEST_ACTION)
-    return actions.elections;
-
-return elections;
+    return elections;
 }
   
   export const votersReducer = (voters = [], action) => {
@@ -53,10 +51,14 @@ return elections;
   
     return isLoading;
   };
+
+
   
 export const votingSystemReducer = combineReducers({
     isLoading: isLoadingReducer,
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
     elections : electionReducer,
+    questions: questionsReducer,
 });
+
