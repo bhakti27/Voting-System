@@ -78,7 +78,7 @@
   grid-area: footer;
 }
 
-#input-field {
-  margin: 5px;
+#input-field-text {
+  width: 90px;
 }
 
