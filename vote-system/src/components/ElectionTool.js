@@ -7,7 +7,7 @@ import { ElectionForm } from './ElectionForm';
 import "./ToolHeader.css";
 
 export const ElectionTool = ({
-  elections, 
+  elections,
   onAddElection: addElection,
 }) => {
 

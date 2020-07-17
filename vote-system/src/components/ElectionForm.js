@@ -19,9 +19,6 @@ export const ElectionForm = ({ onAddQuestion, onSubmitElection }) => {
 
   return (
     <form>
-      <StringFormControl caption="Question for a new Election" name="question"
-        value={electionForm.questionText} onChange={change} />
-      <button type="button" onClick={onAddQuestion}>Add Question</button>
       <StringFormControl caption="Election Name" name="electionName"
         value={electionForm.electionName} onChange={change} />
       <button type="button" onClick={submitElection}>Create Election</button>
