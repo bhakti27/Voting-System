@@ -1,8 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
-
-import { refreshElectionsList } from '../actions/votingSystemActions';
 import {Identification} from '../components/Indetification';
 
 export const VotingSystemContainer = () => {

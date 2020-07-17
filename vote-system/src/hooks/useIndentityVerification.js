@@ -6,14 +6,11 @@ export const useIndentityVerification = (initialVerificationId) => {
   const [ verificationId, setVerificationId] = useState(initialVerificationId);
 
   const change = (e) => {
-    setVerificationId({
-      verificationId = e.target.value
-    });
-    verifyIdentity(verificationId);
+    setVerificationId("This is true");
   };  
 
-  const resetForm = () => setForm(initialForm);
+  const resetVerificationId = () => setVerificationId(initialVerificationId);
 
-  return [ form, change, resetForm ];  
+  return [ verificationId, change, resetVerificationId ];  
 
 };

@@ -6,6 +6,7 @@ import { VoterRegistrationContainer } from './containers/VoterRegistrationContai
 import { Layout } from './components/Layout';
 import {votingSystemStore} from './stores/VotingSystemStore';
 import {VotingSystemContainer} from './containers/VotingSystemContainer';
+import {VoteContainer} from './containers/VoteContainer';
 
 ReactDOM.render(
   <Router>
@@ -42,8 +43,8 @@ ReactDOM.render(
             </Provider>
           </Route>
           <Route path="/vote">
-            <Provider>
-              Vote
+            <Provider store={votingSystemStore}>
+            <VoteContainer/>
             </Provider>
           </Route>
         </Switch>
