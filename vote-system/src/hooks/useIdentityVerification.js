@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-export const useIndentityVerification = (initialVerificationId) => {
+export const useIdentityVerification = (initialVerificationId) => {
 
   const [ verificationId, setVerificationId] = useState(initialVerificationId);
 
