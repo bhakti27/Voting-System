@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StringFormControl } from './FormControls';
 import { useForm } from '../hooks/useForm';
-
+import "./QuestionTool.css";
 export const ElectionForm = ({ onAddQuestion, onSubmitElection }) => {
 
   const [electionForm, change, resetElectionForm] = useForm({
@@ -21,7 +21,7 @@ export const ElectionForm = ({ onAddQuestion, onSubmitElection }) => {
     <form>
       <StringFormControl caption="Election Name" name="electionName"
         value={electionForm.electionName} onChange={change} />
-      <button type="button" onClick={submitElection}>Create Election</button>
+      <button className="button-style" type="button" onClick={submitElection}>Create Election</button>
     </form>
   )
 

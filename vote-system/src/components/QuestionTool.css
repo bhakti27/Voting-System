@@ -13,13 +13,33 @@
   margin: 8px;
 }
 
-.question-tool form label {
-  display: inline-block;
-  width: 80px;
+.button-style
+{
+  margin: 10px;
 }
 
+
+.question-tool form label {
+  display: inline-block;
+  width: 350px;
+
+}
+ul li{
+  margin:15px;
+}
+ul li button
+{
+  margin-left: 10px;
+}
+
+.question-tool-table{
+border: solid;
+margin: 30px;
+}
+
+
 .question-tool form input {
-  width: 100px;
+  width: 350px;
   border: 1px solid slategray;
   border-radius: 5px;
   padding: 4px;
