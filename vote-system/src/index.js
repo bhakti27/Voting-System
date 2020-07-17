@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-import { voterRegistrationStore } from './stores/VoterRegistrationStore';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
 import { Layout } from './components/Layout';
 import {votingSystemStore} from './stores/VotingSystemStore';
@@ -39,7 +37,7 @@ ReactDOM.render(
             </Provider>
           </Route>
           <Route path="/voters">
-            <Provider store={voterRegistrationStore}>
+            <Provider store={votingSystemStore}>
               <VoterRegistrationContainer />
             </Provider>
           </Route>

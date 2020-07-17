@@ -1,15 +1,18 @@
-import React from './node_modules/react';
+import React from 'react';
 
+export const Identification = (props) => {
+    const verifyAction = (e)=>{
+        //console.log(statePrpops);
+        return (
+            <h1> Not Possible to connect</h1>
+        )
+    }
+    return(
+        <div>
+        <label>Enter your email Id</label>
+        <input type="text" placeholder="please enter your email Id"></input>
+        <button type="button" onClick={verifyAction}>Verify</button>
+        </div>
 
-
-
-export const Indentification = () => {
-
-    return
-    {
-        <h1>Verify your Identity</h1>
-        <input type="text" placeholder="enter your email"></input>
-        
-
-    } 
+    )
 }

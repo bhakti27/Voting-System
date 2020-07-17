@@ -11,6 +11,7 @@ import {
 import { VoterRegistration } from '../components/VoterRegistration';
 import { LoadingModal } from '../components/LoadingModal';
 
+
 export const VoterRegistrationContainer = () => {
 
   const stateProps = useSelector(state => state);
@@ -32,13 +33,10 @@ export const VoterRegistrationContainer = () => {
 
   }, [ dispatchProps ]);
 
-
-  // return <>
-  //   <VoterRegistration {...dispatchProps} {...stateProps} />
-  //   <LoadingModal isLoading={stateProps.isLoading} />
-
   return <>
     <VoterRegistration {...dispatchProps} {...stateProps} />
     <LoadingModal isLoading={stateProps.isLoading} />
+    
+    
   </>;
 };
