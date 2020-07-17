@@ -1,18 +1,16 @@
 import { combineReducers } from "redux";
-
 import {
   EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION, REFRESH_VOTERS_DONE_ACTION,
 } from '../actions/voterRegistrationActions';
+import { questionsReducer } from "./questionToolReducers";
+import { REFRESH_ELECTIONS_LIST_DONE_ACTION } from "../actions/votingSystemActions";
 import {TOGGLE_ACTION_REQUEST,TOGGLE_ERROR_ACTION_REQUEST} from '../actions/voteActions';
 
-import { REFRESH_ELECTIONS_LIST_REQUEST_ACTION } from "../actions/votingSystemActions";
+export const electionReducer = (elections = [], action) => {
+    if (action.type === REFRESH_ELECTIONS_LIST_DONE_ACTION)
+        return action.elections;
 
-
-export const electionReducer = (elections=[],actions) =>{
-    if(actions.type === REFRESH_ELECTIONS_LIST_REQUEST_ACTION)
-    return actions.elections;
-
-return elections;
+    return elections;
 }
   
   export const votersReducer = (voters = [], action) => {
@@ -63,23 +61,13 @@ return elections;
     if(action.type===TOGGLE_ACTION_REQUEST){return true;}
     return isBallotVisble;
   }
-  
-export const combinedReducers = combineReducers({
+
+export const votingSystemReducer = combineReducers({
     isLoading: isLoadingReducer,
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
     elections : electionReducer,
     isErrorVisible: isErrorVisibleReducer,
-    isBallotVisible:isBallotVisibleReducer
+    isBallotVisible:isBallotVisibleReducer,
+    questions: questionsReducer,
 });
-
-
-export const votingSystemReducer = (state, action) => {
-
-  if (action.type === VALIDATE_ID_ACTION) {
-    // add logic here
-  }
-
-
-  return combinedReducers(state, action,);
-}
